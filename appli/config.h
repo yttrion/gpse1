@@ -55,10 +55,10 @@
 
 #define USE_INTERNAL_FLASH_AS_EEPROM	0
 
-#define USE_BSP_TIMER			0 //Utilisation de stm32f1_timer.c/h
+#define USE_BSP_TIMER			1 //Utilisation de stm32f1_timer.c/h
 
 
-#define USE_ADC					0
+#define USE_ADC					1
 	//Ces configurations permettent d'activer les entrées analogiques souhaitées.
 	//16 entrées analogiques peuvent être activées maximum.
 	//2 entrées analogiques doivent être activées minimum. (Vref est un choix possible si vous utilisez une seule entrée)
@@ -103,10 +103,10 @@
 #define USE_SENSOR_LIS3MDL		0//Magnetometre
 
 //Autres capteurs :
-#define USE_SENSOR_LSM6DS3		0//Accéléromètre et Gyroscope
-#define USE_SENSOR_LPS22HB		0//Pression (et température)
+#define USE_SENSOR_LSM6DS3		0	//Accéléromètre et Gyroscope
+#define USE_SENSOR_LPS22HB		0	//Pression (et température)
 #define USE_MLX90614			0	//Capteur de température sans contact
-#define USE_MPU6050				0//Accéléromètre et Gyroscope
+#define USE_MPU6050				0	//Accéléromètre et Gyroscope
 #define USE_DHT11				0
 
 #define USE_MATRIX_KEYBOARD		0
@@ -121,7 +121,7 @@
 #define USE_BH1750FVI			0	//Capteur de luminosité ambiante
 #define USE_BMP180				0	//Capteur de pression
 #define USE_MOTOR_DC			0
-#define USE_RTC					0
+#define USE_RTC					1
 #define USE_PWM					0
 #define USE_ESP8266				0//Module Wifi
 #define USE_NFC03A1				0

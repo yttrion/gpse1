@@ -1,2 +1,4 @@
 # GPSE1 - Robot quadrupède
-## STM32
+## STM32F1 project
+
+
