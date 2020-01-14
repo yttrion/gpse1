@@ -43,6 +43,11 @@ int main(void)
 {
 	//Init function
 	HAL_Init();
+
+
+
+
+
 	UART_init(UART2_ID, 115200);
 	SYS_set_std_usart(UART2_ID, UART2_ID, UART2_ID);
 	BSP_GPIO_PinCfg(LED_GREEN_GPIO, LED_GREEN_PIN, GPIO_MODE_OUTPUT_PP, GPIO_NOPULL, GPIO_SPEED_FREQ_HIGH);
@@ -52,14 +57,20 @@ int main(void)
 	//init servo
 	SERVO_init();
 	HAL_Delay(2000);
+	//SERVO_reset();
+	SERVO_reset();
+
 	while (1) //background process
 	{
+		
 		if (!t)
 		{
-			t = 200;
+			t = 20;
 			HAL_GPIO_TogglePin(LED_GREEN_GPIO, LED_GREEN_PIN);
-			//SERVO_process_test();
-			SERVO_auto();
+			SERVO_pompes();
+
 		}
 	}
+
+
 }
