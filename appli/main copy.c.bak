@@ -22,13 +22,15 @@
 #include "config.h"
 #include "servo.h"
 
-#define RESET 'x'
-
 void writeLED(bool_e b)
 {
 	HAL_GPIO_WritePin(LED_GREEN_GPIO, LED_GREEN_PIN, b);
 }
 
+bool_e readButton(void)
+{
+	return !HAL_GPIO_ReadPin(BLUE_BUTTON_GPIO, BLUE_BUTTON_PIN);
+}
 
 static volatile uint32_t t = 0;
 void process_ms(void)
@@ -36,64 +38,50 @@ void process_ms(void)
 	if (t)
 		t--;
 }
-	int main(void){
 
+int main(void)
+{
 	//Init function
 	HAL_Init();
 
-	//Init UART
+
+
+
+
 	UART_init(UART2_ID, 9600);
 	SYS_set_std_usart(UART2_ID, UART2_ID, UART2_ID);
-
 	BSP_GPIO_PinCfg(LED_GREEN_GPIO, LED_GREEN_PIN, GPIO_MODE_OUTPUT_PP, GPIO_NOPULL, GPIO_SPEED_FREQ_HIGH);
+	BSP_GPIO_PinCfg(BLUE_BUTTON_GPIO, BLUE_BUTTON_PIN, GPIO_MODE_INPUT, GPIO_PULLUP, GPIO_SPEED_FREQ_HIGH);
 	Systick_add_callback_function(&process_ms);
-	
 
 	//init servo
 	SERVO_init();
+	HAL_Delay(2000);
+	//SERVO_reset();
 	SERVO_reset();
-	//HAL_Delay(2000);
-	printf("[*] - BB-9 ready!\n");
+
 	while (1) //background process
 	{
+		/*
+		if (!t)
+		{
+			t = 20;
+			HAL_GPIO_TogglePin(LED_GREEN_GPIO, LED_GREEN_PIN);
+			SERVO_pompes();
+
+		}
+		*/
+
+
 
 		if(UART_data_ready(UART2_ID))
   			{
   				uint8_t c;
   				c = UART_get_next_byte(UART2_ID);
   				if(c=='p'){
-  					printf("[*] - Push-ups enabled\n");
-  					while(UART_get_next_byte(UART2_ID)!=RESET){
-  	  					SERVO_pompes();
-  					}
-  					SERVO_reset();
-  					printf("[*] - Stopped push-ups\n");
-
+					  SERVO_pompes();
 				  }
-  				if(c==RESET){
-  					printf("[!] - Reset position\n");
-  					SERVO_reset();
-  				}
-  				if(c=='r'){
-  					printf("[*] - Turn right\n");
-					SERVO_reset();
-					while(UART_get_next_byte(UART2_ID)!=RESET){
-						SERVO_rot_r();
-					}
-					SERVO_reset();
-  				}
-				if(c=='l'){
-  					printf("[*] - Turn left\n");
-					SERVO_reset();
-					while(UART_get_next_byte(UART2_ID)!=RESET){
-						SERVO_rot_l();
-					}
-					SERVO_reset();
-  				}
-
   			}
-  			
-
 	}
 
 

@@ -8,12 +8,10 @@ void SERVO_set_position(uint16_t position);
 void SERVO_process_test(void);
 void SERVO_rand(void);
 void SERVO_reset(void);
-uint16_t SERVO_get_position(void);
-
-
+uint16_t SERVO_get_position(void);  
 void SERVO_pompes(void);
-void SERVO_pompes_init(void);
-
+void SERVO_rot_r(void);
+void SERVO_rot_l(void);
 
 #include "config.h"
 #include "stm32f1_timer.h"
