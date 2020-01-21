@@ -1,0 +1,101 @@
+
+
+
+/*
+typedef enum
+{
+	POS_RESET 			= 150,
+	POS_HORIZONTAL	 = 50,
+	POS_PATE_EN_AVANT = 75
+}pos_e;
+typedef enum
+{
+	SERVO_FORWARD_LEFT_VERTICAL = 0,
+	SERVO_FORWARD_LEFT_HORIZONTAL,
+	SERVO_NB
+};
+
+typedef struct
+{
+	uint8_t pos[SERVO_NB];
+
+}full_pos_t;
+
+static full_pos_t reset_position = (full_pos_t){POS_RESET, POS_RESET, POS_RESET, 2, 1, 6, 7, 8};
+
+static full_pos_t full_pos_to_walk[10] = {	(full_pos_t){2, POS_PATE_EN_AVANT, 			3, 				2, 				1, 			6, 		7, 		8}	,
+											(full_pos_t){2, 4, 3, 2, 1, 6, 7, 8}	}	;
+
+
+
+
+void SERVO_set_full_pos(full_pos_t * full_pos)
+{
+	for(uint8_t i = 0; i<SERVO_NB; i++)
+	{
+		SERVO_set_pos(i, full_pos->pos[i]);
+	}
+}
+
+*/
+//ms
+
+//pour tout reseter :
+//SERVO_set_full_pos(&reset_position);
+
+
+
+/*
+
+{POS_open, POS_open, POS_open, POS_open, POS_open, POS_open, POS_open, POS_open}
+
+init(){
+	for i in tabdeservo{
+		SETpow(FALSE, ele[1], ele[2],RESET)
+	}
+}
+
+mvt()
+	for()
+		for servo in tabdeservo{
+			SETpow(FALSE, ele[1], ele[2],tab_mvt[i][servo])
+		}
+	}
+
+setposition(inverse, timer, can, posi){
+	TIMERsetpwm(timer,can,posi)
+}
+
+
+
+
+
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+/////SET reset_position
+	/*
+	//if (position > 100){position = 100;}
+	//TIMER_set_duty(TIMER1_ID, TIM_CHANNEL_1, position+100);
+	//TIMER_set_duty(TIMER1_ID, TIM_CHANNEL_3, position+100);
+	//TIMER_set_duty(TIMER1_ID, TIM_CHANNEL_2, position+100);	
+	//TIMER_set_duty(TIMER1_ID, TIM_CHANNEL_4, (100-position)+100);
+	//TIMER_set_duty(TIMER4_ID, TIM_CHANNEL_1, position+100);
+	TIMER_set_duty(TIMER4_ID, TIM_CHANNEL_2, position+100);
+	//TIMER_set_duty(TIMER4_ID, TIM_CHANNEL_3, (100-position)+100); //Inverse
+	TIMER_set_duty(TIMER4_ID, TIM_CHANNEL_4, position+50); //Sensible
+	current_position = position;
+	*/

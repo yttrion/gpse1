@@ -48,7 +48,9 @@ appli/servo.o: ../appli/servo.c ../appli/config.h \
  C:/Users/pierr/Desktop/gpse1/lib/bsp/stm32f1_gpio.h \
  C:/Users/pierr/Desktop/gpse1/lib/bsp/macro_types.h \
  C:/Users/pierr/Desktop/gpse1/lib/bsp/stm32f1_uart.h \
- C:/Users/pierr/Desktop/gpse1/lib/bsp/stm32f1_rtc.h
+ C:/Users/pierr/Desktop/gpse1/lib/bsp/stm32f1_rtc.h \
+ C:/Users/pierr/Desktop/gpse1/lib/bsp/stm32f1_sys.h \
+ C:/Users/pierr/Desktop/gpse1/lib/bsp/stm32f1_uart.h
 
 ../appli/config.h:
 
@@ -151,3 +153,7 @@ C:/Users/pierr/Desktop/gpse1/lib/bsp/macro_types.h:
 C:/Users/pierr/Desktop/gpse1/lib/bsp/stm32f1_uart.h:
 
 C:/Users/pierr/Desktop/gpse1/lib/bsp/stm32f1_rtc.h:
+
+C:/Users/pierr/Desktop/gpse1/lib/bsp/stm32f1_sys.h:
+
+C:/Users/pierr/Desktop/gpse1/lib/bsp/stm32f1_uart.h:
