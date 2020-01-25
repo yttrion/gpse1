@@ -125,7 +125,7 @@ int main(void){
 			}
 			if (c == 'c')
 			{
-				printf("[*] - Debug\n");
+				printf("[*] - Coucou\n");
 				SERVO_init(FALSE);
 				while (UART_get_next_byte(UART2_ID) != RESET)
 				{

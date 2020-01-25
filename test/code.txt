@@ -21,7 +21,7 @@ typedef struct
 
 }full_pos_t;
 
-static full_pos_t reset_position = (full_pos_t){POS_RESET, POS_RESET, POS_RESET, 2, 1, 6, 7, 8};
+static fullos_t reset_position = (full_pos_t){POS_RESET, POS_RESET, POS_RESET, 2, 1, 6, 7, 8};
 
 static full_pos_t full_pos_to_walk[10] = {	(full_pos_t){2, POS_PATE_EN_AVANT, 			3, 				2, 				1, 			6, 		7, 		8}	,
 											(full_pos_t){2, 4, 3, 2, 1, 6, 7, 8}	}	;
@@ -72,6 +72,56 @@ setposition(inverse, timer, can, posi){
 
 
 
+
+*/
+
+
+
+
+//timer_id_e timers = [TIMER1_ID, TIMER4_ID];
+//typedef enum { TIM_CHANNEL_1,TIM_CHANNEL_2,TIM_CHANNEL_3,TIM_CHANNEL_4 } channels_e;
+/*
+typedef enum {
+	POS_reset = 150,
+	POS_open = 130,
+	POS_close = 170,
+	POS_o_pied = 110,
+	POS_c_pied = 190
+} pos_e;
+
+typedef enum channels_e{
+	CHANNEL_1 = 0x00000000U,
+	CHANNEL_2 = 0x00000004U,
+	CHANNEL_3 = 0x00000008U,
+	CHANNEL_4 = 0x0000000CU
+};
+
+
+//Definition des servos
+typedef struct {
+	bool_e inverted;
+	uint8_t timer;
+	uint8_t channel;
+} servo_t;
+
+void SERVO_reinitialisation(){
+
+	for(int i=0; i<8; i++){
+		SERVO_set_position(servo_e[i][0], servo_e[i][1], servo_e[i][2], 150);
+	}
+
+
+}
+
+servo_t servo_e[8][3] = {
+						{FALSE, 0, CHANNEL_1},
+						{FALSE, 0, CHANNEL_2},
+						{FALSE, 0, CHANNEL_3},
+						{FALSE, 0, CHANNEL_4},
+						{FALSE, 3, CHANNEL_1},
+						{FALSE, 3, CHANNEL_2},
+						{FALSE, 3, CHANNEL_3},
+						{FALSE, 3, CHANNEL_4}};
 
 */
 
